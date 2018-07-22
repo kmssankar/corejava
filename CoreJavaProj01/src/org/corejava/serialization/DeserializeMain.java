@@ -1,4 +1,4 @@
-package com.corejava.serialization;
+package org.corejava.serialization;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,11 +23,6 @@ public class DeserializeMain {
 				
 				e.printStackTrace();
 			}
-		
-		//ObjectInputStream OIS = new ObjectInputStream(FIS);
 		System.out.println("Course : " + CSRIN.toString());
-		
-		
-		
 	}
 }

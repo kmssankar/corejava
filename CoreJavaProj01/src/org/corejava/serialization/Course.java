@@ -1,4 +1,4 @@
-package com.corejava.serialization;
+package org.corejava.serialization;
 
 import java.io.Serializable;
 
