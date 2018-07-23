@@ -1,0 +1,3 @@
+this is Sample Text input
+To demonstrate
+The FileInput
