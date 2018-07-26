@@ -1,7 +1,8 @@
 package org.corejava.oops;
 
-public class Vehicle {
+ class Vehicle {
 	
+	protected int modelyr;
 	public void showdet()
 	{
 		System.out.println(" This is vehicle !! ");
