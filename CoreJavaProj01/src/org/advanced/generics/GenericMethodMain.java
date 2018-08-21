@@ -35,7 +35,7 @@ public class GenericMethodMain {
 	
 	public static  <T,S> void Display(T[] InpArray1 , S[] InpArray2)
 	{
-		System.out.println("Muliple type parameters ");
+		System.out.println("Multiple type parameters ");
 		System.out.println("Display " + InpArray1.getClass());
 		for(T eachelm : InpArray1)
 			{
@@ -52,7 +52,7 @@ public class GenericMethodMain {
 }
 
 /*OUTPUT:
-	Display class [Ljava.lang.Integer;
+Display class [Ljava.lang.Integer;
 0
 2
 3
@@ -63,7 +63,7 @@ Display class [Ljava.lang.Character;
 c
 e
 m
-Muliple type parameters 
+Multiple type parameters 
 Display class [Ljava.lang.Character;
 2
 c
