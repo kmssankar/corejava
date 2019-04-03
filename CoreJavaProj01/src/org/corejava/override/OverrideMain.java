@@ -7,6 +7,7 @@ public class OverrideMain {
 		childInst.privatedetails();
 		childInst.showDetails(12);
 		childInst.showDetails();
+		childInst.showDetails("Sankar ! ");
 	}
 }
 

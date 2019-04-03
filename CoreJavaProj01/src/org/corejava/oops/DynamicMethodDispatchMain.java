@@ -8,9 +8,11 @@ public class DynamicMethodDispatchMain {
 	public static void main(String[] args) {
 		Vehicle Veh = new Vehicle();
 		Car CarInst = new Car();
-		Veh = CarInst;
+		//Veh = CarInst;
 		// The method in Car will be called even method in vehicle type is called
 		Veh.showdet();
+		Vehicle Veh2 = new Car();
+		Veh2.showdet();
 	}
 }
 

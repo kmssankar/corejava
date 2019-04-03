@@ -20,6 +20,6 @@ public class ChildClass extends BaseClass {
 	
 	protected void privatedetails()
 	{
-		System.out.println("Private Show Details : "+ id + " . " +company + " is of type " + indusType);
+		System.out.println("Child Private Show Details : "+ id + " . " +company + " is of type " + indusType);
 	}
 }

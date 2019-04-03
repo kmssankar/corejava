@@ -37,9 +37,14 @@ public class BaseClass {
 		System.out.println("Base Show Details : "+ id + " . " +company + " is of type " + indusType);
 		privatedetails();
 	}
+	public void showDetails(String test)
+	{
+		System.out.println(test + " Base Show Details : "+ id + " . " +company + " is of type " + indusType);
+		privatedetails();
+	}
 	
 	private void privatedetails()
 	{
-		System.out.println("Private Show Details : "+ id + " . " +company + " is of type " + indusType);
+		System.out.println("Base Private Show Details : "+ id + " . " +company + " is of type " + indusType);
 	}
 }
