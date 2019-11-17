@@ -1,6 +1,6 @@
 package org.corejava.exceptions;
 
-import java.io.IOException;
+
 
 public class ExceptionInitCause {
 
@@ -9,7 +9,7 @@ public class ExceptionInitCause {
 		if(j<1)
 			{ 
 				ArithmeticException AE = new ArithmeticException(" Divide By Zero");
-				AE.initCause(new IOException(" Cause is IO Read"));
+				AE.initCause(new ArithmeticException(" Cause is IO Read"));
 				throw AE;
 			}
 		else
