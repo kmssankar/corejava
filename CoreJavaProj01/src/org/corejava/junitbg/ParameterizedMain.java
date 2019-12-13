@@ -13,7 +13,5 @@ public class ParameterizedMain {
 		for(Failure failure : result.getFailures()) {
 			System.out.println(failure.getMessage());
 		}
-
 	}
-
 }
