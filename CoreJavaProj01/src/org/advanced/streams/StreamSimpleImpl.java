@@ -1,6 +1,7 @@
 package org.advanced.streams;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -71,6 +72,18 @@ public class StreamSimpleImpl {
 		for(Entry<Integer,String> es:brandMap.entrySet()) {
 			System.out.println(" Key -> " + es.getKey() + " Value -> " + es.getValue());
 		}
+	}
+	
+	public void sortByBrand(Sedans[] sedanAry) {
+		List<Sedans> sedanSorted = Arrays.asList(sedanAry).stream().sorted((n1,n2)->n1.getBrand().compareTo(n2.getBrand())).collect(Collectors.toList());
+		sedanSorted.forEach(System.out::println);
+	}
+	
+	public void showSummary(Sedans[] sedanAry) {
+	 
+		IntSummaryStatistics summay = Arrays.asList(sedanAry).stream().mapToInt(n->n.getId()).summaryStatistics();
+		System.out.println("Count -> " + summay.getCount() + " Maximum -> " + summay.getMax() );
+		 
 	}
 	
 }

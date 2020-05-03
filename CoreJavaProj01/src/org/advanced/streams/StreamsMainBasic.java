@@ -39,6 +39,12 @@ public class StreamsMainBasic {
 		
 		System.out.println("-- collect to Map ---");
 		streamSimpleImpl.collectToMap(sedanList);
+		
+		System.out.println("-- Sort using comparator Lambda Expression ---");
+		streamSimpleImpl.sortByBrand(sedanList);
+		
+		System.out.println("-- Show Summary ---");
+		streamSimpleImpl.showSummary(sedanList);
 	}
 }
 
@@ -79,5 +85,13 @@ BMW
  Key -> 4 Value -> Fabia
  Key -> 5 Value -> Passat
  Key -> 6 Value -> 320D
-
+-- Sort using comparator Lambda Expression ---
+Sedans [id=6, brand=BMW, cubicCapacity=1998, model=320D]
+Sedans [id=2, brand=Skoda, cubicCapacity=2000, model=Octavia]
+Sedans [id=3, brand=Skoda, cubicCapacity=1600, model=Rapid]
+Sedans [id=4, brand=Skoda, cubicCapacity=1000, model=Fabia]
+Sedans [id=1, brand=VW, cubicCapacity=1495, model=Jetta]
+Sedans [id=5, brand=Volkswagen, cubicCapacity=1600, model=Passat]
+-- Show Summary ---
+Count -> 6 Maximum -> 6
  */
