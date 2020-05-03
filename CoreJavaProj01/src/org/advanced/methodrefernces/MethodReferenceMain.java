@@ -37,11 +37,19 @@ public class MethodReferenceMain {
 		//method of an arbitrary object
 		InstInterface instInterface2 = String::toUpperCase;
 		System.out.println(instInterface2.greetMessage("test lower to Upper"));
+		
+		//Using Bifunction
+		BiFunction<Integer, Integer, Integer> myfunc = MethodReferenceMain::perfArithematic;
+		System.out.println(myfunc.apply(12, 21));
 	}
 	
 	 static String showWelcome(String str) {
 		return "welcome .. " + str;
 	}
+	 
+	 static Integer perfArithematic(Integer a,Integer b) {
+		 return a*b+a;
+	 }
 
 }
 
