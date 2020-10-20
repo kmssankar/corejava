@@ -69,6 +69,9 @@ public class StreamsMainBasic {
 		System.out.println("\n  --- duplicate by brand -- ");
 		sedandup.forEach(System.out::print);
 		
+		Double AvgCC = Arrays.asList(sedanList).stream().collect(Collectors.averagingInt(Sedans::getCubicCapacity));
+		Arrays.asList(sedanList).stream().sorted();
+		
 	}
 }
 
