@@ -1,5 +1,11 @@
 package org.advanced.streams;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class StreamsMainBasic {
 
 	/*
@@ -45,6 +51,19 @@ public class StreamsMainBasic {
 		
 		System.out.println("-- Show Summary ---");
 		streamSimpleImpl.showSummary(sedanList);
+		
+		System.out.println("-- get Max by field  ---");
+		Sedans se =Arrays.asList(sedanList).stream().max((e1,e2)->e1.getCubicCapacity()-e2.getCubicCapacity()).get();
+		System.out.println("\n Max CC \n"+se);
+		
+		System.out.println("--Grouping by  field  ---");
+		Map<String,List<Sedans>> BrandMap = Arrays.asList(sedanList).stream().collect(Collectors.groupingBy(Sedans::getBrand));
+		BrandMap.entrySet().stream().forEach(System.out::print);
+		
+		Map<String,Long> cntBybrand = Arrays.asList(sedanList).stream().collect(Collectors.groupingBy(Sedans::getBrand,Collectors.counting()));
+		System.out.println("\n  --- Count by brand -- ");
+		cntBybrand.entrySet().stream().forEach(System.out::print);
+		
 	}
 }
 
@@ -94,4 +113,12 @@ Sedans [id=1, brand=VW, cubicCapacity=1495, model=Jetta]
 Sedans [id=5, brand=Volkswagen, cubicCapacity=1600, model=Passat]
 -- Show Summary ---
 Count -> 6 Maximum -> 6
+-- get Max by field  ---
+
+ Max CC 
+Sedans [id=2, brand=Skoda, cubicCapacity=2000, model=Octavia]
+--Grouping by  field  ---
+VW=[Sedans [id=1, brand=VW, cubicCapacity=1495, model=Jetta]]Volkswagen=[Sedans [id=5, brand=Volkswagen, cubicCapacity=1600, model=Passat]]Skoda=[Sedans [id=2, brand=Skoda, cubicCapacity=2000, model=Octavia], Sedans [id=3, brand=Skoda, cubicCapacity=1600, model=Rapid], Sedans [id=4, brand=Skoda, cubicCapacity=1000, model=Fabia]]BMW=[Sedans [id=6, brand=BMW, cubicCapacity=1998, model=320D]]
+  --- Count by brand -- 
+VW=1Volkswagen=1Skoda=3BMW=1
  */

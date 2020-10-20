@@ -11,6 +11,12 @@ public class Patient {
 	Date admitteddt;
 	Date dschrgedt;
 	int billAmnt;
+	
+	
+	public void calc() {
+		int billAnmt =5;
+		System.out.println(billAnmt);
+	}
 	/**
 	 * @return the name
 	 */
