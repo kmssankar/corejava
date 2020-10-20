@@ -16,7 +16,7 @@ public class StreamsMainBasic {
 
 		Sedans[] sedanList = { new Sedans(1, "VW", 2000, "Jetta"), new Sedans(2, "Skoda", 2000, "Octavia"),
 				new Sedans(3, "Skoda", 1600, "Rapid"), new Sedans(4, "Skoda", 1000, "Fabia"), new Sedans(6, "BMW", 1998, "320D"),
-				new Sedans(5, "Volkswagen", 1600, "Passat") };
+				new Sedans(5, "Volkswagen", 1600, "Passat") ,new Sedans(7, "Volkswagen", 1800, "Arteon") };
 		streamSimpleImpl.streamFilter(sedanList);
 		System.out.println("Filter and Update");
 		streamSimpleImpl.streamFilterAndUpdate(sedanList, 1495);
@@ -63,6 +63,11 @@ public class StreamsMainBasic {
 		Map<String,Long> cntBybrand = Arrays.asList(sedanList).stream().collect(Collectors.groupingBy(Sedans::getBrand,Collectors.counting()));
 		System.out.println("\n  --- Count by brand -- ");
 		cntBybrand.entrySet().stream().forEach(System.out::print);
+		
+		List<String> sedandup =Arrays.asList(sedanList).stream().collect(Collectors.groupingBy(Sedans::getBrand,Collectors.counting()))
+				.entrySet().stream().filter(n-> n.getValue()>1).map(n-> n.getKey()).collect(Collectors.toList());
+		System.out.println("\n  --- duplicate by brand -- ");
+		sedandup.forEach(System.out::print);
 		
 	}
 }
