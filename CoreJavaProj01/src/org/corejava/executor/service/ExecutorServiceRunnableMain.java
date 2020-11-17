@@ -27,6 +27,7 @@ class MyThread implements Runnable{
 
 public class ExecutorServiceRunnableMain {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		Runnable runnableTask = () -> {
