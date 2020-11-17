@@ -40,13 +40,13 @@ public class ExecutorServiceRunnableMain {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-
 		};
 
 		ExecutorService executorService = Executors.newFixedThreadPool(5);
 
 		for (int i = 0; i < 15; i++) {
 			executorService.execute(new MyThread(i));
+			System.out.println(" Started thread : " + i);
 		}
 		executorService.shutdown();
 		while (!executorService.isTerminated()) {
